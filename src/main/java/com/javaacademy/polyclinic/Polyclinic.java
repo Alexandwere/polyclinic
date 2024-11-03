@@ -16,23 +16,28 @@ public class Polyclinic {
     private Set<Doctor> doctors;
 
     public void cureOfDentist() {
-        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
+        cure(findDoctor(DENTIST));
     }
 
     public void cureOfJunSurgeon() {
-        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
+        cure(findDoctor(SURGEON));
     }
 
     public void cureOfSenSurgeon() {
-        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
+        cure(findDoctor(SURGEON));
     }
 
     public void cureOfTherapist() {
-        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
+        cure(findDoctor(THERAPIST));
     }
 
     private void cure(Doctor doctor) {
         BigDecimal bill = doctor.cure();
-        this.cashBox.setProfit(this.cashBox.getProfit().add(bill));
+        cashBox.acceptPay(bill);
+    }
+
+    private Doctor findDoctor(Specialization specialization) {
+        return doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), specialization))
+                .findAny().get();
     }
 }

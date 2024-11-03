@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 public class CashBox {
     private BigDecimal profit = BigDecimal.ZERO;
 
-    public void acceptPay() {
-
+    public void acceptPay(BigDecimal bill) {
+        profit = profit.add(bill);
     }
 
     public void printProfit() {
