@@ -1,0 +1,5 @@
+doctor:
+  cost-of-dentist: 1500
+  cost-of-junior_surgeon: 700
+  cost-of-senior-surgeon: 2000
+  cost-of-therapist: 500
