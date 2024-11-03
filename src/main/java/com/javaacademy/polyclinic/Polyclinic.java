@@ -5,26 +5,30 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+
+import static com.javaacademy.polyclinic.Specialization.*;
 
 @Component
 public class Polyclinic {
     private CashBox cashBox;
-    private List<Doctor> doctors;
+    private Set<Doctor> doctors;
 
     public void cureOfDentist() {
-        cure(doctors.get(0));
+        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
     }
 
     public void cureOfJunSurgeon() {
-        cure(doctors.get(1));
+        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
     }
 
     public void cureOfSenSurgeon() {
-        cure(doctors.get(2));
+        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
     }
 
     public void cureOfTherapist() {
-        cure(doctors.get(3));
+        cure(doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), DENTIST)).findAny().get());
     }
 
     private void cure(Doctor doctor) {
