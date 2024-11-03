@@ -5,6 +5,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.math.BigDecimal;
+
 import static com.javaacademy.polyclinic.Specialization.*;
 
 @Configuration
@@ -18,21 +20,21 @@ public class PolyclinicConfiguration {
 
     @Bean
     public Doctor dentist() {
-        return new Doctor(doctorProperty.getCostOfDentist(), DENTIST);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfDentist()), DENTIST);
     }
 
     @Bean
     public Doctor junSurgeon() {
-        return new Doctor(doctorProperty.getCostOfJuniorSurgeon(), SURGEON);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfJuniorSurgeon()), SURGEON);
     }
 
     @Bean
     public Doctor SenSurgeon() {
-        return new Doctor(doctorProperty.getCostOfSeniorSurgeon(), SURGEON);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfSeniorSurgeon()), SURGEON);
     }
 
-     @Bean
+    @Bean
     public Doctor therapist() {
-        return new Doctor(doctorProperty.getCostOfTherapist(), THERAPIST);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfTherapist()), THERAPIST);
     }
 }

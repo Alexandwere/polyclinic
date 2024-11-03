@@ -13,22 +13,27 @@ import static com.javaacademy.polyclinic.Specialization.*;
 @Component
 public class Polyclinic {
     private CashBox cashBox;
-    private Set<Doctor> doctors;
+    private List<Doctor> doctors;
+
+    public Polyclinic(CashBox cashBox, List<Doctor> doctors) {
+        this.cashBox = cashBox;
+        this.doctors = doctors;
+    }
 
     public void cureOfDentist() {
-        cure(findDoctor(DENTIST));
+        cure(doctors.get(0));
     }
 
     public void cureOfJunSurgeon() {
-        cure(findDoctor(SURGEON));
+        cure(doctors.get(1));
     }
 
     public void cureOfSenSurgeon() {
-        cure(findDoctor(SURGEON));
+        cure(doctors.get(2));
     }
 
     public void cureOfTherapist() {
-        cure(findDoctor(THERAPIST));
+        cure(doctors.get(3));
     }
 
     private void cure(Doctor doctor) {
@@ -36,8 +41,8 @@ public class Polyclinic {
         cashBox.acceptPay(bill);
     }
 
-    private Doctor findDoctor(Specialization specialization) {
-        return doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), specialization))
-                .findAny().get();
-    }
+//    private Doctor findDoctor(Specialization specialization) {
+//        return doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), specialization))
+//                .findAny().get();
+//    }
 }
