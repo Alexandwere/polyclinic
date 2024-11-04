@@ -20,21 +20,21 @@ public class PolyclinicConfiguration {
 
     @Bean
     public Doctor dentist() {
-        return new Doctor(new BigDecimal(doctorProperty.getCostOfDentist()), DENTIST);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfSession1()), DENTIST);
     }
 
     @Bean
     public Doctor junSurgeon() {
-        return new Doctor(new BigDecimal(doctorProperty.getCostOfJuniorSurgeon()), SURGEON);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfSession2()), SURGEON);
     }
 
     @Bean
     public Doctor SenSurgeon() {
-        return new Doctor(new BigDecimal(doctorProperty.getCostOfSeniorSurgeon()), SURGEON);
+        return new Doctor(new BigDecimal(doctorProperty.getCostOfSession3()), SURGEON);
     }
 
     @Bean
     public Doctor therapist() {
-        return new Doctor(new BigDecimal(doctorProperty.getCostOfTherapist()), THERAPIST);
+        return new Doctor(new BigDecimal( doctorProperty.getCostOfSession4()), THERAPIST);
     }
 }

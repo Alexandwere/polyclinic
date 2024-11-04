@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 @ConfigurationProperties(prefix = "cost")
 @Getter
 public class DoctorProperty {
-    private String costOfDentist;
-    private String costOfJuniorSurgeon;
-    private String costOfSeniorSurgeon;
-    private String costOfTherapist;
+    private String costOfSession1;
+    private String costOfSession2;
+    private String costOfSession3;
+    private String costOfSession4;
 }
