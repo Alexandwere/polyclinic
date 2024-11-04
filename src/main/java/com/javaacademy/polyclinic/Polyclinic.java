@@ -1,24 +1,17 @@
 package com.javaacademy.polyclinic;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
-import static com.javaacademy.polyclinic.Specialization.*;
 
 @Component
+@Getter
+@AllArgsConstructor
 public class Polyclinic {
     private CashBox cashBox;
     private List<Doctor> doctors;
-
-    public Polyclinic(CashBox cashBox, List<Doctor> doctors) {
-        this.cashBox = cashBox;
-        this.doctors = doctors;
-    }
 
     public void cureOfDentist() {
         cure(doctors.get(0));
@@ -40,9 +33,4 @@ public class Polyclinic {
         BigDecimal bill = doctor.cure();
         cashBox.acceptPay(bill);
     }
-
-//    private Doctor findDoctor(Specialization specialization) {
-//        return doctors.stream().filter(e -> Objects.equals(e.getSpecialization(), specialization))
-//                .findAny().get();
-//    }
 }

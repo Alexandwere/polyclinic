@@ -1,6 +1,6 @@
 doctor:
-  cost-of-session1: 1500
-  cost-of-session2: 700
-  cost-of-session3: 2000
-  cost-of-session4: 500
+  cost-of-dentist: 1500
+  cost-of-junior-surgeon: 700
+  cost-of-senior-surgeon: 2000
+  cost-of-therapist: 500
 
