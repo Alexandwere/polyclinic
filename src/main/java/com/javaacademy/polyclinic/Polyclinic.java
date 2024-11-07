@@ -10,23 +10,28 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class Polyclinic {
+    public static final int INDEX_OF_DENTIST = 0;
+    public static final int INDEX_OF_JUN_SURGEON = 1;
+    public static final int INDEX_OF_SEN_SURGEON = 2;
+    public static final int INDEX_OF_THERAPIST = 3;
+
     private CashBox cashBox;
     private List<Doctor> doctors;
 
     public void cureOfDentist() {
-        cure(doctors.get(0));
+        cure(doctors.get(INDEX_OF_DENTIST));
     }
 
     public void cureOfJunSurgeon() {
-        cure(doctors.get(1));
+        cure(doctors.get(INDEX_OF_JUN_SURGEON));
     }
 
     public void cureOfSenSurgeon() {
-        cure(doctors.get(2));
+        cure(doctors.get(INDEX_OF_SEN_SURGEON));
     }
 
     public void cureOfTherapist() {
-        cure(doctors.get(3));
+        cure(doctors.get(INDEX_OF_THERAPIST));
     }
 
     private void cure(Doctor doctor) {

@@ -5,9 +5,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.math.BigDecimal;
-
-import static com.javaacademy.polyclinic.Specialization.*;
+import static com.javaacademy.polyclinic.Specialization.DENTIST;
+import static com.javaacademy.polyclinic.Specialization.SURGEON;
+import static com.javaacademy.polyclinic.Specialization.THERAPIST;
 
 @Configuration
 @EnableConfigurationProperties(value = DoctorProperty.class)
@@ -29,7 +29,7 @@ public class PolyclinicConfiguration {
     }
 
     @Bean
-    public Doctor SenSurgeon() {
+    public Doctor senSurgeon() {
         return new Doctor(doctorProperty.getCostOfSeniorSurgeon(), SURGEON);
     }
 
